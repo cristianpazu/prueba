@@ -1,0 +1,26 @@
+<div class="contaier">
+    <form [formGroup]="editarForm" (ngSubmit)="postForm(editarForm.value)">
+        <div class="form-group">
+            <label for="controlNombre">nombre</label>
+            <input type="text" class="form-control" placeholder="nombre" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="controlNombre">apellido</label>
+        <input type="text" class="form-control" placeholder="apellido" formControlName="apellido">
+</div>
+<div class="form-group">
+    <label for="controlNombre">direccion</label>
+    <input type="text" class="form-control" placeholder="direccion" formControlName="direccion">
+</div>
+<div class="form-group">
+    <label for="controlNombre">telefono</label>
+    <input type="text" class="form-control" placeholder="telefono" formControlName="telefono">
+</div>
+<div class="form-group">
+    <label for="controlNombre">email</label>
+    <input type="text" class="form-control" placeholder="email" formControlName="email">
+</div>
+<br><br>
+<button type="submit" class="btn btn-primary">Guardar</button>
+<button type="submit" class="btn btn-danger">eliminar</button>
+    </form>
