@@ -14,9 +14,9 @@ export class NuevoComponent implements OnInit {
     idCliente : new FormControl(''),
     name: new FormControl(''),
     apellido: new FormControl(''),
-    direccion: new FormControl(''),
+    documento: new FormControl(''),
     telefono: new FormControl(''),
-    email: new FormControl(''),
+    sexo: new FormControl(''),
   });
   constructor(private api:PersonaService,private router:Router) { }
 
@@ -28,6 +28,9 @@ export class NuevoComponent implements OnInit {
      console.log(data);
    })
 
+  }
+  salir(){
+    this.router.navigate(['persona']);
   }
 
 }

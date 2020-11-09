@@ -32,20 +32,6 @@ clientess:listaclienteI[];
 
   editarCliente(id){
     this.router.navigate(['editar', id]);
-   
-   //this.api.getSingleCliente(id).subscribe(data => {
-    //console.log(data); 
-    //this.datoscliente = data[0];
-    // this.editarForm.setValue({
-
-      //  'name' :  this.datoscliente.name,
-
-     // });
-
-      //console.log(this.editarForm.value);
-      
-      
-    //})
   }
 
   nuevocliente(){

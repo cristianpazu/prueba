@@ -22,14 +22,22 @@ url: String='http://localhost:8080/';
     return this.httpClient.get<clienteI>(direccion);
   }
 
-  putCliente(form:clienteI):Observable<Response>{
+  putCliente(form:clienteI):Observable<clienteI>{
     let direccion = this.url + 'clientes';
     
-    return this.httpClient.put<Response>(direccion, form)
+    return this.httpClient.put<clienteI>(direccion, form);
   }
-  deleteClient(id):Observable<clienteI>{
-    let direccion = this.url + 'clientes/'+ id;
-    return this.httpClient.get<clienteI>(direccion);
+
+ deleteClient(form:clienteI):Observable<clienteI>{
+    let direccion = this.url + 'clientes';
+    let Option={
+      headers: new HttpHeaders({
+        'Conten-type':'application/json'
+      }),
+      body:form
+
+    }
+    return this.httpClient.delete<clienteI>(direccion,Option);
   }
 
   postCliente(form:clienteI):Observable<ResponseI>{

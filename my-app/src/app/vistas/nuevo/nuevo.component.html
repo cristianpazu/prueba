@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="contaier">
     <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)">
         <div class="form-group">
@@ -9,18 +11,19 @@
         <input type="text" class="form-control" placeholder="apellido" formControlName="apellido">
 </div>
 <div class="form-group">
-    <label for="controlNombre">direccion</label>
-    <input type="text" class="form-control" placeholder="direccion" formControlName="direccion">
+    <label for="controlNombre">documento</label>
+    <input type="text" class="form-control" placeholder="documento" formControlName="documento">
 </div>
 <div class="form-group">
     <label for="controlNombre">telefono</label>
     <input type="text" class="form-control" placeholder="telefono" formControlName="telefono">
 </div>
 <div class="form-group">
-    <label for="controlNombre">email</label>
-    <input type="text" class="form-control" placeholder="email" formControlName="email">
+    <label for="controlNombre">sexo</label>
+    <input type="text" class="form-control" placeholder="sexo" formControlName="sexo">
 </div>
 <br><br>
 <button type="submit" class="btn btn-primary">Guardar</button>
 
+<button type="button" class="btn btn-danger" (click)="salir()">salir</button>
     </form>

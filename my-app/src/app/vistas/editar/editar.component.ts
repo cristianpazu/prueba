@@ -18,9 +18,9 @@ export class EditarComponent implements OnInit {
     idCliente : new FormControl(''),
     name: new FormControl(''),
     apellido: new FormControl(''),
-    direccion: new FormControl(''),
+    documento: new FormControl(''),
     telefono: new FormControl(''),
-    email: new FormControl(''),
+    sexo: new FormControl(''),
   });
   ngOnInit(): void {
     let clienteid= this.activerouter.snapshot.paramMap.get('id');
@@ -33,9 +33,9 @@ export class EditarComponent implements OnInit {
         'idCliente' : data.idCliente,
         'name' :  data.name,
         'apellido' : data.apellido,
-        'direccion' : data.direccion,
+        'documento' : data.documento,
         'telefono' :  data.telefono,
-        'email' :  data.email,
+        'sexo' :  data.sexo,
 
 
       });
@@ -51,32 +51,20 @@ export class EditarComponent implements OnInit {
    this.api.putCliente(form).subscribe(data =>{
     console.log(data);
    });
+
   
 
   }
-  eliminar(identificador){
+  eliminar(){
+    let datos:clienteI = this.editarForm.value;
+    this.api.deleteClient(datos).subscribe(data =>{
+    console.log(data);
 
+    });
+  }
 
-
-
-
-
-
-   // let datos:clienteI = this.editarForm.value;
-   /* let clienteid= this.activerouter.snapshot.paramMap.get('id');
-    this.api.deleteClient(clienteid).subscribe(data =>{
-      this.editarForm.setValue({
-        'idCliente' : data.idCliente,
-        'name' :  data.name,
-        'apellido' : data.apellido,
-        'direccion' : data.direccion,
-        'telefono' :  data.telefono,
-        'email' :  data.email,
-
-
-      });
-
-    })*/
+  salir(){
+    this.router.navigate(['persona']);
   }
 
 }

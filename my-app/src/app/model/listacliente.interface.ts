@@ -2,9 +2,9 @@ export interface listaclienteI{
     idCliente:String;
     name:String;
     apellido:String;
-    direccion:String;
+    documento:String;
     telefono:String;
-    email:String;
+    sexo:String;
 
     
 }
